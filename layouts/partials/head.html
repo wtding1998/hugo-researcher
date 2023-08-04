@@ -20,10 +20,6 @@
         {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
     {{ end -}}
 
-    {{- if not .Site.IsServer -}}
-        {{- partial "googleanalytics.html" . -}}
-    {{- end -}}
-
     {{ if .Params.noindex -}}
     <meta name="robots" content="noindex">
     {{ end -}}
